@@ -16,7 +16,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 //
 //import android.content.Intent
 //import android.os.Bundle
