@@ -37,6 +37,12 @@ fun HomeScreen(navController: NavController) {
                     Button(onClick = { navController.navigate("Pr21") }) {
                         Text("Pr21 ListView")
                     }
+                    Button(onClick = { navController.navigate("Pr22") }) {
+                        Text("Pr22 GridView")
+                    }
+                    Button(onClick = { navController.navigate("Pr23") }) {
+                        Text("Pr23 CustomScroll")
+                    }
                 }
             }
 //            Surface(modifier = Modifier.padding(innerPadding)) {

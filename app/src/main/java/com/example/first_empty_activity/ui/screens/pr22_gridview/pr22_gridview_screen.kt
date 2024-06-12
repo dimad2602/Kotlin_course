@@ -33,7 +33,7 @@ fun Pr22GridViewScreen(navController: NavController) {
             MyAppBar(
                 title = "Pr22 GridView",
                 backArrow = true,
-                onNavigateUp = { navController.navigate("home") })
+                onNavigateUp = { navController.navigate("Home") })
         },
         content = { innerPadding ->
             Column {
