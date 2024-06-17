@@ -13,6 +13,7 @@ import com.example.first_empty_activity.ui.screens.pr21_listView.Pr21ListViewScr
 import com.example.first_empty_activity.ui.screens.pr22_gridview.Pr22GridViewScreen
 import com.example.first_empty_activity.ui.screens.pr23.Pr23CustomScrollViewScreen
 import com.example.first_empty_activity.ui.screens.pr23.Pr23CustomScrollViewScreenPreview
+import com.example.first_empty_activity.ui.screens.pr24_25.Pr2425Screen
 
 
 @Composable
@@ -27,5 +28,6 @@ fun AppNavHost(
         composable("Pr21") { Pr21ListViewScreen(navController) }
         composable("Pr22") { Pr22GridViewScreen(navController) }
         composable("Pr23") { Pr23CustomScrollViewScreen(navController) }
+        composable("Pr2425") { Pr2425Screen(navController) }
     }
 }

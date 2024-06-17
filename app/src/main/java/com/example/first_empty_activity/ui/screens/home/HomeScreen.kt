@@ -40,8 +40,8 @@ fun HomeScreen(navController: NavController) {
                     Button(onClick = { navController.navigate("Pr22") }) {
                         Text("Pr22 GridView")
                     }
-                    Button(onClick = { navController.navigate("Pr23") }) {
-                        Text("Pr23 CustomScroll")
+                    Button(onClick = { navController.navigate("Pr2425") }) {
+                        Text("Pr24_25 Screen")
                     }
                 }
             }
