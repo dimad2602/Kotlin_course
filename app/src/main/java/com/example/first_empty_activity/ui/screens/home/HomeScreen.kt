@@ -14,6 +14,21 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.first_empty_activity.ui.components.appbar.MyAppBar
 
+//sealed class Routes(val route: String) {
+//
+//    object Home : Routes("home")
+//    object Contacts : Routes("contact")
+//    object About : Routes("about")
+//}
+//
+//NavHost(navController = navController, startDestination = Routes.Home.route) {
+//
+//    composable(Routes.Home.route) { Home() }
+//    composable(Routes.Contacts.route) { Contacts()  }
+//    composable(Routes.About.route) { About() }
+//}
+
+
 @Composable
 fun HomeScreen(navController: NavController) {
     Scaffold(
@@ -42,6 +57,9 @@ fun HomeScreen(navController: NavController) {
                     }
                     Button(onClick = { navController.navigate("Pr2425") }) {
                         Text("Pr24_25 Screen")
+                    }
+                    Button(onClick = { navController.navigate("Pr27") }) {
+                        Text("Pr27 Person Model")
                     }
                 }
             }

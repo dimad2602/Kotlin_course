@@ -23,10 +23,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.first_empty_activity.R
 import com.example.first_empty_activity.ui.components.appbar.MyAppBar
 import com.example.first_empty_activity.ui.components.text_field.MyTextField
 import com.example.first_empty_activity.ui.theme.Purple40
@@ -73,7 +75,7 @@ fun Pr2425Screen(navController: NavController) {
                 Text(text = "Вход")
             }
             Spacer(Modifier.height(12.dp))
-            Text(text = "Зарегистрироваться", color = Purple40)
+            Text(text = "Зарегистрироваться", color = colorResource(R.color.purple_200))
         }
     })
 }
