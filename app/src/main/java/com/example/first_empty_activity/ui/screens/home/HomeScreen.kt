@@ -61,6 +61,9 @@ fun HomeScreen(navController: NavController) {
                     Button(onClick = { navController.navigate("Pr27") }) {
                         Text("Pr27 Person Model")
                     }
+                    Button(onClick = { navController.navigate("Pr29") }) {
+                        Text("Pr29 Sealed Class")
+                    }
                 }
             }
 //            Surface(modifier = Modifier.padding(innerPadding)) {

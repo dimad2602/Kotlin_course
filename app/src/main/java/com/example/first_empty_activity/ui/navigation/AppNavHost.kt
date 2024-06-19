@@ -15,6 +15,7 @@ import com.example.first_empty_activity.ui.screens.pr23.Pr23CustomScrollViewScre
 import com.example.first_empty_activity.ui.screens.pr23.Pr23CustomScrollViewScreenPreview
 import com.example.first_empty_activity.ui.screens.pr24_25.Pr2425Screen
 import com.example.first_empty_activity.ui.screens.pr27_model.Pr27Model
+import com.example.first_empty_activity.ui.screens.pr29_sealed.Pr29Sealed
 
 
 @Composable
@@ -31,5 +32,6 @@ fun AppNavHost(
         composable("Pr23") { Pr23CustomScrollViewScreen(navController) }
         composable("Pr2425") { Pr2425Screen(navController) }
         composable("Pr27") { Pr27Model(navController) }
+        composable("Pr29") { Pr29Sealed(navController) }
     }
 }

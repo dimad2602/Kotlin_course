@@ -7,6 +7,6 @@ fun PersonModel.toDTO(): PersonDTO {
     return PersonDTO(firstName = this.firstName, lastName = this.lastName, age = this.age)
 }
 
-fun PersonDTO.toPerson(age: Int): PersonModel {
+fun PersonDTO.toPerson(): PersonModel {
     return PersonModel(firstName = this.firstName, lastName = this.lastName, age = this.age)
 }
