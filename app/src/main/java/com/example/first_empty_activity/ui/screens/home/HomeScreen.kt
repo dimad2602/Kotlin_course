@@ -64,6 +64,9 @@ fun HomeScreen(navController: NavController) {
                     Button(onClick = { navController.navigate("Pr29") }) {
                         Text("Pr29 Sealed Class")
                     }
+                    Button(onClick = { navController.navigate("Pr30") }) {
+                        Text("Pr30 ViewModel")
+                    }
                 }
             }
 //            Surface(modifier = Modifier.padding(innerPadding)) {
