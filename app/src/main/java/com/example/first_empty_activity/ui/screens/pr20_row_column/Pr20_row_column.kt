@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,12 +36,21 @@ fun Pr20RowColumnScreen(navController: NavController) {
                 onNavigateUp = { navController.navigateUp() })
         },
         content = { innerPadding ->
-            Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+//
+//            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+//                CircularProgressIndicator()
+//                Text("dfg", Modifier.padding(innerPadding))
+//            }
+
+            Column(modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)) {
                 Text("PR20", modifier = Modifier.padding(innerPadding))
                 Box(
                     Modifier
                         .size(width = 300.dp, height = 80.dp)
-                        .border(1.dp, color = Color.LightGray).padding(16.dp)
+                        .border(1.dp, color = Color.LightGray)
+                        .padding(16.dp)
                 ) {
                     Row {
                         Box(
@@ -73,6 +83,7 @@ fun Pr20RowColumnScreen(navController: NavController) {
                         }
                     }
                 }
+                CircularProgressIndicator()
             }
         }
     )

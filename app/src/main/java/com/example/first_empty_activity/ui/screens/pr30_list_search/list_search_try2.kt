@@ -1,6 +1,5 @@
 package com.example.first_empty_activity.ui.screens.pr30_list_search
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -10,34 +9,31 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.example.first_empty_activity.domain.list_search.ListSearchViewModel
 import com.example.first_empty_activity.ui.components.appbar.MyAppBar
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
-fun Pr30ListSearchScreen(
-    viewModel: ListSearchViewModel = viewModel(),
-    navController: NavController
+fun ListSearchTryTwoScreen(
+    navController: NavController,
+    repo: ListSearchRepoTwo
 ) {
-    LaunchedEffect(Unit) {
-        viewModel.fetchItems()
-    }
-    val searchTextField = remember { mutableStateOf("") }
+    val viewModel: ListSearchViewModelTwo = viewModel(
+        factory = ListSearchViewModelFactoryTwo(repo)
+    )
 
-    val items by viewModel.items.observeAsState(emptyList())
-    val loading by viewModel.loading.observeAsState(false)
-    val error by viewModel.error.observeAsState(null)
+    LaunchedEffect(Unit) {
+        viewModel.getItems()
+    }
+
+    val list by viewModel.list.observeAsState(listOf())
+    val loading by viewModel.loading.observeAsState(true)
 
     Scaffold(topBar = {
         MyAppBar(
@@ -46,25 +42,24 @@ fun Pr30ListSearchScreen(
             onNavigateUp = { navController.navigate("home") })
     }) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
-            TextField(
-                value = searchTextField.value,
-                onValueChange = { query ->
-                    searchTextField.value = query
-                    viewModel.searchItems(query)
-                },
-                label = { Text("Search") }
-            )
+//            TextField(
+//                value = "",
+//                onValueChange = { query ->
+//                    viewModel.searchItems(query)
+//                },
+//                label = { Text("Search") }
+//            )
             Spacer(Modifier.height(12.dp))
-            Button(onClick = { viewModel.fetchItems() }) {
+            Button(onClick = { viewModel.getItems() }) {
                 Text("back")
             }
             Spacer(Modifier.height(12.dp))
             when {
-                loading -> CircularProgressIndicator()
-                error != null -> Text("Error: $error")
+                loading -> CircularProgressIndicator()//Text(text = "Загрузка")//
+                //error != null -> Text("Error: $error")
                 else -> LazyColumn {
-                    items(items.size) { index ->
-                        Text(text = items[index].toString())
+                    items(list.size) { index ->
+                        Text(text = list[index].toString())
                     }
                 }
             }
@@ -72,4 +67,3 @@ fun Pr30ListSearchScreen(
         }
     }
 }
-

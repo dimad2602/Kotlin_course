@@ -50,6 +50,7 @@ android {
 }
 
 dependencies {
+    //implementation("androidx.compose.material3:material3:1.3.0-beta03") //исправляло CircularProgressIndicator на старой версии
 
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.core.ktx)

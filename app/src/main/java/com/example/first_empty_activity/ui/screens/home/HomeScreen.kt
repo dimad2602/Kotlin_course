@@ -67,6 +67,12 @@ fun HomeScreen(navController: NavController) {
                     Button(onClick = { navController.navigate("Pr30") }) {
                         Text("Pr30 ViewModel")
                     }
+                    Button(onClick = { navController.navigate("AsyncTest") }) {
+                        Text("AsyncTest")
+                    }
+                    Button(onClick = { navController.navigate("Pr30Try2") }) {
+                        Text("Pr30 try 2")
+                    }
                 }
             }
 //            Surface(modifier = Modifier.padding(innerPadding)) {
